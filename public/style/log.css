@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background-image: url("2.jpg");
+}
+
+.navButton {
+    height: 10vh;
+    width: 100%;
+}
+
+.contentDiv {
+    right: 0;
+    width: 75vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    border-style: none;
+    position: absolute;
+    text-align: center;
+}
+
+#navigationMenu {
+    left: 0vw;
+    width: 25vw;
+    background-color: darkgrey;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    border-style: none;
+    position: absolute;
+}
+
+.userAuth {
+    top: 60vh;
+    width: 15vw;
+    position: absolute;
+    display: block;
+}
+
+.userAuthForm {
+    vertical-align: top;
+    width: 100%;
+}
+
+#registerDiv {
+    margin-left: 45%;
+    top: 40%;
+}

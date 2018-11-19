@@ -13,6 +13,7 @@ Dependencies:
 5. npm install file-system --save
 6. npm install mongodb --save
 7. npm install client-sessions
+8. npm install dotenv
 
 How to add a file and commit it in GitHub:
 1. git status
