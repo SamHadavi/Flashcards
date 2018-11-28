@@ -1,4 +1,4 @@
-function getCard() {
+function checkCard() {
 
 	var question = document.getElementById("questionInput").value; 
 	var answer = document.getElementById("answerInput").value;
@@ -13,5 +13,5 @@ function getCard() {
 };
 
 document.getElementById("save").addEventListener("click", function() {
-    getCard();
+    checkCard();
 });

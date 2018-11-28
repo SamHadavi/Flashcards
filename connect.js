@@ -142,11 +142,11 @@ function deleteListDB(email, list, callback) {
     })
 }
 
-function addCard(question, answer, list, callabck){
+function addCard(email, list, question, answer, callback){
     //
 }
 
-function deleteCard(question, answer, list, callabck){
+function deleteCard(email, list, question, answer, callback){
     //
 }
 
@@ -159,7 +159,7 @@ module.exports = {
     addUserDB,
     deleteUserDB,
     addListDB,
-    deleteListDB
+    deleteListDB,
     addCard,
     deleteCard
 }

@@ -9,12 +9,14 @@
 <body>
     {{> navbar}}
     <h2>Flashcard</h2>
-    </br>
-    <textarea class="cardQuestionFrom" id="questionInput" name="question" rows="4" cols="40" maxlength="25" placeholder="Question"></textarea>
-    <textarea class="cardQuestionFrom" id="answerInput" name="answer" rows="4" cols="40" maxlength="25" placeholder="Answer"></textarea>
+    <div id='createCard'>
+            <form id="card-create-form" action="/addCard" method="post">
+                <textarea class="cardForm" id="questionInput" name="question" rows="4" cols="40" maxlength="25" placeholder="Question"></textarea>
+                <textarea class="cardForm" id="answerInput" name="answer" rows="4" cols="40" maxlength="25" placeholder="Answer"></textarea>
+                <button id="save" type="button">Save</button>
+            </form>
+    </div>
 
-    </br>
-    <button id="save" type="button">Save</button>
     <script type="text/javascript" src="flashcards.js"></script>
     <script src='js/flashcards.js'></script>
 </body>
