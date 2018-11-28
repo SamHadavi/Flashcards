@@ -1,9 +1,9 @@
 function getCard() {
 
-	var question = document.getElementById("question").value; 
-	var answer = document.getElementById("answer").value;
+	var question = document.getElementById("questionInput").value; 
+	var answer = document.getElementById("answerInput").value;
 
-    if ((question === null) || (answer === null)) {
+    if ((question === '') || (answer === '')) {
         alert("Please enter both a question and answer.");
         return false
     } else if ((question.length < 3) || (answer.length < 3)) {

@@ -142,6 +142,14 @@ function deleteListDB(email, list, callback) {
     })
 }
 
+function addCard(question, answer, list, callabck){
+    //
+}
+
+function deleteCard(question, answer, list, callabck){
+    //
+}
+
 module.exports = {
     login,
     signup,
@@ -152,4 +160,6 @@ module.exports = {
     deleteUserDB,
     addListDB,
     deleteListDB
+    addCard,
+    deleteCard
 }
