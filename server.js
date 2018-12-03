@@ -139,9 +139,16 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-//app.post('/addCard');
+app.post('/addCard', (req, res) => {
+    var email = req.session.user.email
+    var question = req.body.question
+    var answer = req.body.answer
+    //
+});
 
-//app.post('/deleteCard');
+app.post('/deleteCard', (req, res) => {
+    //
+});
 
 app.listen(port, () => {
     console.log(`Server is up on the port ${port}`);

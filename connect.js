@@ -142,11 +142,11 @@ function deleteListDB(email, list, callback) {
     })
 }
 
-function addCard(email, list, question, answer, callback){
+function addCardDB(email, list, question, answer, callback){
     //
 }
 
-function deleteCard(email, list, question, answer, callback){
+function deleteCardDB(email, list, question, answer, callback){
     //
 }
 
