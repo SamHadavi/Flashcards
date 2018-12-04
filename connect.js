@@ -149,13 +149,7 @@ function addCardDB(email, list, question, answer, callback){
                     "question": question,
                     "answer": answer
                 };
-        addUserDB(list, "Users", (msg) => {
-            if(msg === 'error') {
-                callback('failed')
-            } else {
-                callback('success')
-            }
-        }); 
+?//
     } else {
         callback('failed')
     }
