@@ -142,10 +142,26 @@ function deleteListDB(email, list, callback) {
     })
 }
 
+/** adds a new question and answer (flashcard) to a list */
 function addCardDB(email, list, question, answer, callback){
-    //
+    if (question.length > 3 && answer.length > 3){
+        var flashcard = {
+                    "question": question,
+                    "answer": answer
+                };
+        addUserDB(list, "Users", (msg) => {
+            if(msg === 'error') {
+                callback('failed')
+            } else {
+                callback('success')
+            }
+        }); 
+    } else {
+        callback('failed')
+    }
 }
 
+/** deletes a question and answer (flashcard) to a list */
 function deleteCardDB(email, list, question, answer, callback){
     //
 }
@@ -160,6 +176,6 @@ module.exports = {
     deleteUserDB,
     addListDB,
     deleteListDB,
-    addCard,
-    deleteCard
+    addCardDB,
+    deleteCardDB
 }
