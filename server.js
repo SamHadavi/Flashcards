@@ -143,11 +143,24 @@ app.post('/addCard', (req, res) => {
     var email = req.session.user.email
     var question = req.body.question
     var answer = req.body.answer
-    //
+    var list = req.body.list
+    getDB.addCardDB(email, list, question, answer, (msg) => {
+        if (msg === 'success') {
+            res.send('ok')
+        }
+    });
 });
 
 app.post('/deleteCard', (req, res) => {
-    //
+    var email = req.session.user.email
+    var question = req.body.question
+    var answer = req.body.answer
+    var list = req.body.list
+    getDB.deleteCardDB(email, list, question, answer, (msg) => {
+        if (msg === 'success') {
+            res.send('ok')
+        }
+    });
 });
 
 app.listen(port, () => {
