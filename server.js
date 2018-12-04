@@ -143,7 +143,7 @@ app.post('/addCard', (req, res) => {
     var email = req.session.user.email
     var question = req.body.question
     var answer = req.body.answer
-    var list = req.body.list
+    var list = req.session.user.currentList
     getDB.addCardDB(email, list, question, answer, (msg) => {
         if (msg === 'success') {
             res.send('ok')
@@ -153,9 +153,9 @@ app.post('/addCard', (req, res) => {
 
 app.post('/deleteCard', (req, res) => {
     var email = req.session.user.email
-    var question = req.body.question
-    var answer = req.body.answer
-    var list = req.body.list
+    var question = req.body.currentQuestion
+    var answer = req.body.currentAnswer
+    var list = req.session.user.currentList
     getDB.deleteCardDB(email, list, question, answer, (msg) => {
         if (msg === 'success') {
             res.send('ok')

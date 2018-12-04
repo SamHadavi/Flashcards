@@ -1,4 +1,4 @@
-function checkCard() {
+function check() {
 
 	var question = document.getElementById("questionInput").value; 
 	var answer = document.getElementById("answerInput").value;
@@ -13,5 +13,23 @@ function checkCard() {
 };
 
 document.getElementById("save").addEventListener("click", function() {
-    checkCard();
+    check();
 });
+
+/*function addCard() {
+
+}
+
+function deleteCard(){
+    if(check()){
+
+    }
+}
+
+document.getElementById("save").addEventListener("click", function() {
+    addCard();
+});
+
+document.getElementById("delete").addEventListener("click", function() {
+    deleteCard();
+});*/
