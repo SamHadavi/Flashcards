@@ -149,15 +149,28 @@ function addCardDB(email, list, question, answer, callback){
                     "question": question,
                     "answer": answer
                 };
-?//
+        readFile(email, (user) => {
+            user.lists.list.push(flashcard)
+            updateDB(email, user)
+            callback('success')
+        })  
     } else {
         callback('failed')
     }
 }
 
-/** deletes a question and answer (flashcard) to a list */
+/** deletes a question and answer (flashcard) from a list */
 function deleteCardDB(email, list, question, answer, callback){
-    //
+    var flashcard = {
+                    "question": question,
+                    "answer": answer
+    };
+    readFile(email, (user) => {
+        listIndex = user.lists.list.findIndex(flashcard)
+        user.lists.list.splice(listIndex, 1)
+        updateDB(email, user)
+        callback('success')
+    })
 }
 
 module.exports = {
