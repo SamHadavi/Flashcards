@@ -20,7 +20,7 @@
 				<button class='button' id='addList'>Create a new list</button>
 			
 
-				<form id='radioForm' action="/flashCards" method="post" onsubmit="return valid();" >
+				<form id='radioForm' action="/flashCards" onsubmit="return valid();" >
 				{{#each lists as |list|}}
 					<input type="radio" name="radioList" id="{{list.name}}" value="{{list.name}}"><label for='{{list.name}}'>{{list.name}}</label><br>
 				{{/each}}
