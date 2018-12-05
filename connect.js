@@ -163,7 +163,7 @@ function addCardDB(email, list, question, answer, callback) {
         user.lists[listIndex].cards.push(card);
         updateDB(email, user)
         callback('success')
-    });
+        });
     } else {
         callback('failed')
     }
