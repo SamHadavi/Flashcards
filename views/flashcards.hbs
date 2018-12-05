@@ -13,27 +13,27 @@
             <form id="card-create-form" action="/addCard" method="post">
                 <textarea class="cardForm" id="questionInput" name="question" rows="4" cols="40" maxlength="25" placeholder="Question"></textarea>
                 <textarea class="cardForm" id="answerInput" name="answer" rows="4" cols="40" maxlength="25" placeholder="Answer"></textarea>
-                <button id="save" type="button">Save</button>
+                <input type='submit' class='button' id='saveButton' value='Save'>
             </form>
     </div>
 
-    <div id="slideShow">
     	
-    	<div id="cardDisplay">
-    		<div id="questionDisplay" name="currentQuestion">none</div>
-    		<div id="answerDisplay" name="currentAnswer">none</div>
+    	<div id="cardDisplay" form="delete-card-form">
+            <div id="currentDisplay">Question</div>
+    		<div id="questionDisplay" name="currentQuestion" style="display: block">question</div>
+    		<div id="answerDisplay" name="currentAnswer" style="display: none">answer</div>
     	</div>
+        <input type='submit' class="button" id="flipCard" value="FLIP"/>
 
     	<div id="navigate">
-	    	<button id="previousCard"><</button> 
+	    	<input type='submit' class="button" id="previousCard" value="<"/> 
 	    	<div id="current">#</div>/<div id="total">#</div>
-	    	<button id="nextCard">></button>
+	    	<input type='submit' class="button" id="nextCard" value=">"/>
     	</div>
     	
         <form id="delete-card-form" action="/deleteCard" method="post">
-    	   <button id="delete" type="button">Delete</button>
+           <input type='submit' class='button' id='saveButton' value='Delete'>
         </form>
-    </div>
 
     <script src='js/flashcards.js'></script>
 </body>

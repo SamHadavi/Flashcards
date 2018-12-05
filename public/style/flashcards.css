@@ -44,3 +44,15 @@ body {
 .navBarLink:hover {
     background-color: #808080;
 }
+
+#questionDisplay {
+    display: block
+}
+
+#answerDisplay {
+    display: none
+}
+
+#cardDisplay {
+    border-style: solid;
+}
