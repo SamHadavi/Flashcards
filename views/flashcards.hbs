@@ -17,13 +17,10 @@
             </form>
     </div>
 
-    
-        {{list.cards}}
-    	
     	<div id="cardDisplay" form="delete-card-form">
             <div id="currentDisplay">Question</div>
-    		<div id="questionDisplay" name="currentQuestion" style="display: block">question</div>
-    		<div id="answerDisplay" name="currentAnswer" style="display: none">answer</div>
+    		<div id="questionDisplay" name="currentQuestion" style="display: block">{{list.cards.[0].question}}</div>
+    		<div id="answerDisplay" name="currentAnswer" style="display: none">{{list.cards.[0].answer}}</div>
     	</div>
         <input type='submit' class="button" id="flipCard" value="FLIP" />
 

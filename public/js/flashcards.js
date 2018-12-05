@@ -1,3 +1,5 @@
+var index_of_list = 0;
+
 function check() {
 	var question = document.getElementById("questionInput").value; 
 	var answer = document.getElementById("answerInput").value;
@@ -29,6 +31,14 @@ function next(){
     document.getElementById("answerDisplay").style.display = "none";
     document.getElementById("questionDisplay").innerHTML = "";
     document.getElementById("answerDisplay").innerHTML = "";
+    index_of_list = index_of_list + 1
+
+    var qHandle = "{{list.cards.[" + index_of_list + "].question}}";
+    var aHandle = "{{list.cards.[" + index_of_list + "].answer}}";
+
+    document.getElementById("questionDisplay").innerHTML = qhandle;
+    document.getElementById("answerDisplay").innerHTML = aHandle;
+
 }
 
 function previous(){
@@ -36,14 +46,24 @@ function previous(){
     document.getElementById("answerDisplay").style.display = "none";
     document.getElementById("questionDisplay").innerHTML = "";
     document.getElementById("answerDisplay").innerHTML = "";
+
+    index_of_list = index_of_list - 1
+
+    var qHandle = "{{list.cards.[" + index_of_list + "].question}}";
+    var aHandle = "{{list.cards.[" + index_of_list + "].answer}}";
+
+    document.getElementById("questionDisplay").innerHTML = qhandle;
+    document.getElementById("answerDisplay").innerHTML = aHandle;
 }
 
-function previous(){
+function wipe(){
     document.getElementById("questionDisplay").style.display = "block";
     document.getElementById("answerDisplay").style.display = "none";
     document.getElementById("questionDisplay").innerHTML = "";
     document.getElementById("answerDisplay").innerHTML = "";
+    document.getElementById("currentDisplay").innerHTML = "Question";
 }
+
 
 document.getElementById("flipCard").addEventListener("click", function() {
     flip();

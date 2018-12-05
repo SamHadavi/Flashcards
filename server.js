@@ -123,16 +123,15 @@ app.post('/deleteList', (req, res) => {
     })
 });
 
-app.get('/flashCards', sessionCheck, (req, res) => {
-   getDB.readFile(req.session.user.email, (user) => {
-       req.session.user = user
-       req.session.user.currentList = req.body.radioList
-       listIndex = getDB.getListIndex(req.body.radioList, req.session.user)
-       res.render('flashcards.hbs', {
-           username: req.session.user.username,
-           list: req.session.user.lists[listIndex]
-       });
-   });
+app.post('/flashCards', sessionCheck, (req, res) => {
+    getDB.readFile(req.session.user.email, (user) => {
+        req.session.user = user
+        req.session.user.currentList = req.body.radioList
+        listIndex = getDB.getListIndex(req.body.radioList, req.session.user)
+        res.render('flashcards.hbs', {
+            list: req.session.user.lists[listIndex]
+        });
+    });
 });
 
 app.get('/logout', (req, res) => {
