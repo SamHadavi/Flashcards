@@ -159,7 +159,7 @@ function addCardDB(email, list, question, answer, callback) {
     if (question.length > 3 && answer.length > 3){
         readFile(email, (user) => {
         var listIndex = getListIndex(list, user)
-        var card = {question: answer};
+        var card = {"question": question,"answer": answer};
         user.lists[listIndex].cards.push(card);
         updateDB(email, user)
         callback('success')
