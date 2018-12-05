@@ -173,8 +173,9 @@ function addCardDB(email, list, question, answer, callback) {
 function deleteCardDB(email, list, question, answer, callback){
     readFile(email, (user) => {
         var card = {"question": question,"answer": answer};
-        cardIndex = getListIndex(list, card, user)
-        user.lists.list.splice(listIndex, 1)
+        var listIndex = getListIndex(list, user);
+        var cardIndex = getCardIndex(list, card, user);
+        user.lists[listIndex].cards.splice(cardIndex,1);
         updateDB(email, user)
         callback('success')
     })
