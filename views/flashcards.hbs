@@ -8,7 +8,7 @@
 
 <body>
     {{> navbar}}
-    <h2>Flashcards</h2>
+    <h2>{{list.name}}</h2>
     <div id='createCard'>
             <form id="card-create-form" action="/addCard" method="post">
                 <textarea class="cardForm" id="questionInput" name="question" rows="4" cols="40" maxlength="25" placeholder="Question"></textarea>
@@ -17,13 +17,15 @@
             </form>
     </div>
 
+    {{list.cards}}
+
     	
     	<div id="cardDisplay" form="delete-card-form">
             <div id="currentDisplay">Question</div>
     		<div id="questionDisplay" name="currentQuestion" style="display: block">question</div>
     		<div id="answerDisplay" name="currentAnswer" style="display: none">answer</div>
     	</div>
-        <input type='submit' class="button" id="flipCard" value="FLIP"/>
+        <input type='submit' class="button" id="flipCard" value="FLIP" />
 
     	<div id="navigate">
 	    	<input type='submit' class="button" id="previousCard" value="<"/> 

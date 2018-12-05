@@ -1,8 +1,6 @@
 function check() {
-
 	var question = document.getElementById("questionInput").value; 
 	var answer = document.getElementById("answerInput").value;
-
     if ((question === '') || (answer === '')) {
         alert("Please enter both a question and answer.");
         return false
@@ -26,6 +24,26 @@ function flip(){
     }
 }
 
+function next(){
+    document.getElementById("questionDisplay").style.display = "block";
+    document.getElementById("answerDisplay").style.display = "none";
+    document.getElementById("questionDisplay").innerHTML = "";
+    document.getElementById("answerDisplay").innerHTML = "";
+}
+
+function previous(){
+    document.getElementById("questionDisplay").style.display = "block";
+    document.getElementById("answerDisplay").style.display = "none";
+    document.getElementById("questionDisplay").innerHTML = "";
+    document.getElementById("answerDisplay").innerHTML = "";
+}
+
+function previous(){
+    document.getElementById("questionDisplay").style.display = "block";
+    document.getElementById("answerDisplay").style.display = "none";
+    document.getElementById("questionDisplay").innerHTML = "";
+    document.getElementById("answerDisplay").innerHTML = "";
+}
 
 document.getElementById("flipCard").addEventListener("click", function() {
     flip();
@@ -41,6 +59,10 @@ document.getElementById("previousCard").addEventListener("click", function() {
 
 document.getElementById("saveButton").addEventListener("click", function() {
     check();
+});
+
+document.getElementById("deleteButton").addEventListener("click", function() {
+    wipe();
 });
 
 
