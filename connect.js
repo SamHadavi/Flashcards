@@ -126,6 +126,7 @@ function deleteUserDB(record, table, callback) {
 /** Adds a new list to a users file and saves it to the database */
 function addListDB(email, list, callback) {
     readFile(email, (user) => {
+        list["cards"] = []
         user.lists.push(list);
         updateDB(email, user);
         callback('success')
@@ -142,31 +143,52 @@ function deleteListDB(email, list, callback) {
     })
 }
 
+/**finds the index number of the flashcard and returns is*/
+function getCardIndex(list, card, data) {
+    var listIndex = getListIndex(list, data)
+    var cards = data.lists[listIndex].cards
+    for(var i=0; i < cards.length; i++) {
+        if (cards[i].name === card) {
+            return i
+        }
+    }
+};
+
 /** adds a new question and answer (flashcard) to a list */
-function addCardDB(email, list, question, answer, callback){
+function addCardDB(email, list, question, answer, callback) {
     if (question.length > 3 && answer.length > 3){
-        var flashcard = {
-                    "question": question,
-                    "answer": answer
-                };
-        readFile(email, (user) => {
-            user.lists.list.push(flashcard)
-            updateDB(email, user)
-            callback('success')
-        })  
+        var listIndex = getListIndex(list, user)
+        var card = {"question": question,"answer": answer};
+        user.lists[listIndex].cards.push(card);
+        updateDB(email, user)
+        callback('success')
     } else {
         callback('failed')
     }
 }
 
+
+function addCardDB(email, list, question, answer, callback) {
+    readFile(email, (user) => {
+        var listIndex = getListIndex(list, user)
+        var card = {"question": question,"answer": answer};
+
+        user.lists[listIndex].cards.push(card);
+        updateDB(email, user)
+
+        callback('success')
+    });
+}
+
+
 /** deletes a question and answer (flashcard) from a list */
 function deleteCardDB(email, list, question, answer, callback){
-    var flashcard = {
+    var card = {
                     "question": question,
                     "answer": answer
     };
     readFile(email, (user) => {
-        listIndex = user.lists.list.findIndex(flashcard)
+        cardIndex = getListIndex(list, card, user)
         user.lists.list.splice(listIndex, 1)
         updateDB(email, user)
         callback('success')

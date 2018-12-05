@@ -26,6 +26,8 @@ function flip(){
     }
 }
 
+
+
 document.getElementById("flipCard").addEventListener("click", function() {
     flip();
 });
